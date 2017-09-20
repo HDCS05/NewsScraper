@@ -1,0 +1,28 @@
+{
+  "name": "newsscraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDCS05/NewsScraper.git"
+  },
+  "author": "Hilton DCS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HDCS05/NewsScraper/issues"
+  },
+  "homepage": "https://github.com/HDCS05/NewsScraper#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.12",
+    "morgan": "^1.8.2",
+    "request": "^2.82.0"
+  }
+}
