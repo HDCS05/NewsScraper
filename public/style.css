@@ -1,0 +1,15 @@
+body {
+	background-image: url("/public/news.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.letterTW {
+	font-family: 'GNUTypewriterStandard', cursive;
+}
+
+h1 {
+	font-family: 'GNUTypewriterStandard', cursive;
+	font-size: 6em;
+	text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+}
