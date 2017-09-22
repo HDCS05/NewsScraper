@@ -31,7 +31,8 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/hwScrapedData");
+//mongoose.connect("mongodb://localhost/hwScrapedData");
+mongoose.connect("mongodb://heroku_psmm8d9c:5hgpgisngk163uepdrve9vblja@ds147034.mlab.com:47034/heroku_psmm8d9c");
 var db = mongoose.connection;
 
 // Show any mongoose errors
