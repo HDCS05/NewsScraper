@@ -1,0 +1,45 @@
+<div class="container fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<h1>Mongo Scraper!</h1>
+			<h2>Saved News</h2>
+			<div class="row">
+					<form class="form-inline text-center" action="/" method="GET">
+						<button type="submit" class="btn btn-primary btn-lg">Home Page</button>
+						<button type="submit" formaction="/scrape" class="btn btn-danger btn-lg">Scrape News Content</button>
+					</form>
+			</div>
+			<br/>
+			<div class="row">
+
+				<ul>
+					{{#each oSavedNews}}
+							<li>
+								<div class="panel panel-info">
+								  <div class="panel-heading">
+								    <h3 class="panel-title text-center">{{this.title}}</h3>
+								  </div>
+								  <div class="panel-body">
+								  	<p>{{this.description}}</p>
+								    <a href="{{this.link}}">Original Link: {{this.link}}</a>
+								    {{!-- <form class="form text-center" action="/" method="GET"> --}}
+								    <form class="form text-center">	
+								    	<button type="submit" class="btn btn-warning">Save a Note</button>
+								    </form>
+								  </div>
+								</div>
+							</li>
+					{{/each}}
+				</ul>
+
+			</div>>
+			<br/>
+			<div class="row">
+				<div class="container-fluid letterTW colorW text-center">
+					Copyright &copy; 2017 Hilton DCS
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>

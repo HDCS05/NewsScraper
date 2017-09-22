@@ -1,5 +1,5 @@
 body {
-	background-image: url("/public/news.jpg");
+	background-image: url("News.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -11,5 +11,23 @@ body {
 h1 {
 	font-family: 'GNUTypewriterStandard', cursive;
 	font-size: 6em;
-	text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+	text-align: center;
+	text-shadow: -1px 0 White, 0 1px White, 1px 0 White, 0 -1px White;
 }
+
+h2 {
+	font-family: 'GNUTypewriterStandard', cursive;
+	font-size: 3em;
+	text-align: center;
+	text-shadow: -1px 0 White, 0 1px White, 1px 0 White, 0 -1px White;
+}
+
+h3, p, button {
+	font-family: 'GNUTypewriterStandard', cursive;
+}
+
+.colorW {
+	color: White;
+	font-size: 1.5em;
+}
+

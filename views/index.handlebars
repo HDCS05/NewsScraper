@@ -3,14 +3,14 @@
 		<div class="col-md-10 col-md-offset-1">
 			<h1>Mongo Scraper!</h1>
 			<div class="row">
-
-				<button type="submit" class="btn btn-danger btn-lg">Scrape News Content</button>
-
+				<form class="form-inline text-center" action="/scrape" method="GET">
+					<button type="submit" class="btn btn-danger btn-lg">Scrape News Content</button>
+					<button type="submit" formaction="/savedArticles" class="btn btn-success btn-lg">Saved Articles</button>
+				</form>
 			</div>
-				
 			<br/>
 			<div class="row">
-				<div class="container-fluid letterTW">
+				<div class="container-fluid letterTW colorW text-center">
 					Copyright &copy; 2017 Hilton DCS
 				</div>
 			</div>
