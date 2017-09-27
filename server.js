@@ -32,7 +32,13 @@ app.use(express.static("public"));
 
 // Database configuration with mongoose
 //mongoose.connect("mongodb://localhost/hwScrapedData");
-mongoose.connect("mongodb://heroku_psmm8d9c:5hgpgisngk163uepdrve9vblja@ds147034.mlab.com:47034/heroku_psmm8d9c");
+//mongoose.connect("mongodb://heroku_psmm8d9c:5hgpgisngk163uepdrve9vblja@ds147034.mlab.com:47034/heroku_psmm8d9c");
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/hwScrapedData",
+  {
+    useMongoClient: true
+  }
+);
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -86,7 +92,7 @@ app.get("/scrape", function(req, res) {
     var hbsObject = {
       scrapednews: result
     };
-    console.log(result);
+    //console.log(result);
     res.render("scraped", hbsObject);
   });
   // Tell the browser that we finished scraping the text
@@ -118,13 +124,27 @@ app.post("/:id", function(req, res) {
 
   //create empty array
   var oData = {};
-  var vindex = req.params.id
 
-  oData.title = result[vindex].title;
-  oData.link = result[vindex].link;
-  oData.description = result[vindex].description;
-
+  //this logs were used to test the values of the form
   //console.log("-----------------" + req)
+  // console.log("");
+  // console.log("1-----------------------")
+  // console.log(req.body.inputTitle);
+  // console.log("2-----------------------")
+  // console.log(req.body.inputLink);
+  // console.log("3-----------------------")
+  // console.log(req.body.inputDescription);
+  // console.log("4-----------------------")
+  // console.log(req.body);
+  // console.log("----------------------")
+  // console.log("");
+  
+  //do not use the following lines was to test values of the array
+  //var vindex = req.params.id
+  // oData.title = result[vindex].title;
+  // oData.link = result[vindex].link;
+  // oData.description = result[vindex].description;
+  // var entry = new Article(oData);
   // console.log(oData.title);
   // console.log(oData.link);
   // console.log(oData.description);
@@ -132,6 +152,9 @@ app.post("/:id", function(req, res) {
 
   // Using our Article model, create a new entry
   // This effectively passes the result object to the entry (and the title and link)
+  oData.title = req.body.inputTitle;
+  oData.link = req.body.inputLink;
+  oData.description = req.body.inputDescription;
   var entry = new Article(oData);
 
   // Now, save that entry to the db
@@ -142,7 +165,7 @@ app.post("/:id", function(req, res) {
     }
     // Or log the doc
     else {
-      console.log(doc);
+      //console.log(doc);
       res.redirect("/savedArticles");
     }
   });
