@@ -8,7 +8,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 // Requiring our Note and Article models
-var Note = require("./models/Note.js");
+var Note = require("./models/note.js");
 var Article = require("./models/Article.js");
 // Our scraping tools
 var request = require("request");
